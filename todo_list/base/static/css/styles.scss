@@ -1,4 +1,11 @@
-.incomplete-icon, .complete-icon {
+$main_color1: #4b6cb7;
+$main_color2: #182848;
+$neutral_color1: #fafafa;
+$neutral_color2: #fff;
+$shadow_color: rgba(0, 0, 0, 0.21);
+$font-stack: "Raleway", sans-serif;
+
+%icon {
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -6,23 +13,23 @@
 
 body {
   box-sizing: border-box;
-  background-color: #fafafa;
-  font-family: "Raleway", sans-serif;
+  background-color: $neutral_color1;
+  font-family: $font-stack;
   font-weight: 200;
   padding-top: 15px;
 }
 
 a,
 p {
-  color: #4b6cb7;
+  color: $main_color1;
 }
 
 .container {
   max-width: 550px;
   margin: auto;
-  background-color: #fff;
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  background-color: $neutral_color2;
+  -webkit-box-shadow: 2px 2px 13px -4px $shadow_color;
+  box-shadow: 2px 2px 13px -4px $shadow_color;
 }
 
 .header-bar {
@@ -30,12 +37,13 @@ p {
   justify-content: space-between;
   padding: 10px;
   border-radius: 5px 5px 0 0;
-  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  background: linear-gradient(90deg, $main_color1 0%, $main_color2 100%);
   color: #fff;
-}
-.header-bar a {
-  text-decoration: none;
-  font-weight: 600;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+  }
 }
 
 #search-add-wrapper {
@@ -46,10 +54,10 @@ p {
 }
 
 #add-link {
-  color: #4b6cb7;
+  color: $main_color1;
   text-decoration: none;
   font-size: 42px;
-  text-shadow: 1px 1px #182848;
+  text-shadow: 1px 1px $main_color2;
   margin-right: 8px;
 }
 
@@ -63,17 +71,17 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #fff;
+  background-color: $neutral_color2;
   border-top: 1px solid rgb(226, 226, 226);
 }
 
 .task-title {
   display: flex;
-}
-.task-title a.task-incomplete {
-  text-decoration: none;
-  color: #182848;
-  margin-left: 10px;
+  a.task-incomplete {
+    text-decoration: none;
+    color: $main_color2;
+    margin-left: 10px;
+  }
 }
 
 .task-complete {
@@ -87,21 +95,23 @@ p {
   font-weight: 900;
   font-size: 22px;
   line-height: 0;
-  color: #182848;
+  color: $main_color2;
 }
 
 .complete-icon {
+  @extend %icon;
   background-color: rgb(105, 192, 105);
 }
 
 .incomplete-icon {
+  @extend %icon;
   background-color: rgb(218, 218, 218);
 }
 
-input[type=text],
-input[type=password],
+input[type="text"],
+input[type="password"],
 textarea {
-  border: 1x solid #182848;
+  border: 1x solid $main_color2;
   border-radius: 5px;
   padding: 10px;
   width: 90%;
@@ -113,9 +123,9 @@ label {
 }
 
 .button {
-  border: 1px solid #182848;
-  background-color: #fafafa;
-  color: #182848;
+  border: 1px solid $main_color2;
+  background-color: $neutral_color1;
+  color: $main_color2;
   padding: 10px;
   font-size: 14px;
   border-radius: 5px;
@@ -130,5 +140,3 @@ label {
 .register-button {
   margin-top: 10px;
 }
-
-/*# sourceMappingURL=styles.css.map */
